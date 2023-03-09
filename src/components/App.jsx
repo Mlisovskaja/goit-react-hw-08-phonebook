@@ -1,16 +1,18 @@
-export const App = () => {
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+
+import UserRoutes from './UserRoutes';
+
+import { store } from '../redux/store';
+
+function App() {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <Provider store={store}>
+      <BrowserRouter basename="/goit-react-hw-08-phonebook">
+        <UserRoutes />
+      </BrowserRouter>
+    </Provider>
   );
-};
+}
+
+export default App;
