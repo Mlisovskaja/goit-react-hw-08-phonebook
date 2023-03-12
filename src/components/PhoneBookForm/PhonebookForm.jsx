@@ -42,10 +42,10 @@ const PhonebookForm = ({ onSubmit }) => {
           handleChange={handleChange}
           {...fields.number}
         />
+        <button className={styles.btn} type="submit">
+          Add contact
+        </button>
       </form>
-      <button className={styles.btn} type="submit">
-        Add contact
-      </button>
     </>
   );
 };
