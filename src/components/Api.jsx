@@ -1,20 +1,43 @@
 import axios from 'axios';
 
-const contactsInstance = axios.create({
-  baseURL: 'https://64022912f61d96ac4864b89d.mockapi.io/contacts',
+const authInstance = axios.create({
+  baseURL: 'https://connections-api.herokuapp.com',
 });
 
-export const getAllContacts = async () => {
-  const { data } = await contactsInstance.get('/');
-  return data;
+const setToken = token => {
+  if (token) {
+    return (authInstance.defaults.headers.common.authorization = `Bearer ${token}`);
+  }
+  authInstance.defaults.headers.common.authorization = '';
 };
 
-export const handleAddContact = async data => {
-  const { data: result } = await contactsInstance.post('/', data);
+export const signup = async data => {
+  const { data: result } = await authInstance.post('/users/signup', data);
+  setToken(result.token);
   return result;
 };
 
-export const handleDeleteContact = async id => {
-  const { data } = await contactsInstance.delete(`/${id}`);
+export const login = async data => {
+  const { data: result } = await authInstance.post('/users/login', data);
+  setToken(result.token);
+  return result;
+};
+
+export const getCurrent = async token => {
+  try {
+    setToken(token);
+    const { data } = await authInstance.get('/users/current');
+    return data;
+  } catch (error) {
+    setToken();
+    throw error;
+  }
+};
+
+export const logout = async () => {
+  const { data } = await authInstance.post('/users/logout');
+  setToken();
   return data;
 };
+
+export default authInstance;

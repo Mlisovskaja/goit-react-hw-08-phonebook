@@ -1,19 +1,19 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import PhonebookForm from '../components/Phonebook/PhonebookForm';
-import Filter from '../components/Phonebook/Filter';
-import ContactsList from '../components/Phonebook/ContactsList';
+import PhonebookForm from '../../components/PhoneBookForm/PhonebookForm';
+import Filter from '../../components/Filter/Filter';
+import ContactsList from '../../components/ContactsList/ContactsList';
 
 import {
   fetchContacts,
   addContact,
   deleteContact,
-} from '../redux/contacts/contacts-operations';
-import { setFilter } from '../redux/filter/filter-slice';
+} from '../../redux/contacts/contacts-operations';
+import { setFilter } from '../../redux/filter/filter-slice';
 
-import { getFilteredContacts } from '../redux/contacts/contacts-selectors';
-import { getFilter } from '../redux/filter/filter-selectors';
+import { getFilteredContacts } from '../../redux/contacts/contacts-selectors';
+import { getFilter } from '../../redux/filter/filter-selectors';
 
 const ContactsPage = () => {
   const filteredContacts = useSelector(getFilteredContacts);
@@ -37,18 +37,18 @@ const ContactsPage = () => {
     dispatch(setFilter(target.value));
   };
 
-  const isName = Boolean(filteredContacts.length);
+  // const isName = Boolean(filteredContacts.length);
 
   return (
     <>
       <PhonebookForm onSubmit={handleAddContact} />
       <Filter value={filter} handleChange={handleFilter} />
-      {isName && (
-        <ContactsList
-          deleteName={handleDeleteContact}
-          contacts={filteredContacts}
-        />
-      )}
+      {/* {isName && ( */}
+      <ContactsList
+        deleteName={handleDeleteContact}
+        contacts={filteredContacts}
+      />
+      {/* )} */}
     </>
   );
 };

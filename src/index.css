@@ -1,15 +1,77 @@
 @import-normalize; /* bring in normalize.css styles */
 
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+    color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #3399ff;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+button {
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Caveat', sans-serif;
+  font-size: 16px;
+  line-height: 29px;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  width: 100px;
+  transition-duration: 150ms;
+  transition-property: all;
+}
+
+button:hover {
+  background-color: #3399ff;
+  box-shadow: 0 0 10px #3399ff, 0 0 20px #3399ff, 0 0 40px #3399ff;
+  color: white;
+}
+
+h1,
+p {
+  margin-top: 50px;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 5px;
+  font-size: 28px;
+  text-align: center;
+}
+
+div {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  margin: 20px 0px;
+  padding: 10px 0px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+a:hover {
+  font-weight: bold;
+}
+
