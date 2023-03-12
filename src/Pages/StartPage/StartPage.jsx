@@ -1,5 +1,3 @@
-import styles from './start-page.module.css';
-
 const StartPage = () => {
   return (
     <div>
