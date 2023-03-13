@@ -20,9 +20,10 @@ name: 'auth',
       store.error = null;
     })
     .addCase(signup.fulfilled, (store, { payload }) => {
+      const { user, token } = payload;
       store.loading = false;
-      store.user = payload.user;
-      store.token = payload.token;
+      store.user = user;
+      store.token = token;
       store.isLogin = true;
     })
     .addCase(signup.rejected, (store, { payload }) => {
@@ -35,9 +36,10 @@ name: 'auth',
       store.error = null;
     })
      .addCase(login.fulfilled, (store, { payload }) => {
-      store.loading = false;
-      store.user = payload.user;
-      store.token = payload.token;
+       const { user, token } = payload;
+       store.loading = false;
+      store.user = user;
+      store.token = token;
       store.isLogin = true;
     })
     .addCase(login.rejected, (store, { payload }) => {
