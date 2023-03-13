@@ -1,13 +1,21 @@
 import { useMemo } from 'react';
 import { nanoid } from 'nanoid';
+import styles from './form-field.module.css';
 
 const FormField = ({ label, handleChange, ...props }) => {
   const id = useMemo(() => nanoid(), []);
 
   return (
-    <div>
-      <label htmlFor={id}>{label}</label>
-      <input id={id} onChange={handleChange} {...props} />
+    <div className={styles.field}>
+      <label className={styles.label} htmlFor={id}>
+        {label}
+      </label>
+      <input
+        className={styles.input}
+        id={id}
+        onChange={handleChange}
+        {...props}
+      />
     </div>
   );
 };

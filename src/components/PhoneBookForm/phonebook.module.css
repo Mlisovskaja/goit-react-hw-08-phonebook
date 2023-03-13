@@ -1,19 +1,6 @@
-.form {
-    display: flex;
-    flex-direction: column;
-    margin: 30px;
-}
+.wrap {
+border: dotted white;
+padding: 20px 0px;
 
-.label {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-    margin-top: 15px;
-    font-size: 18px;
-    margin-left: 15px;
-}
-
-.input {
-    max-width: 300px;
 }
 

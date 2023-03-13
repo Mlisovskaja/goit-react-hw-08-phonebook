@@ -26,18 +26,12 @@ const PhonebookForm = ({ onSubmit }) => {
   const { name, number } = state;
 
   return (
-    <>
+    <div className={styles.wrap}>
       <form className={styles.form} onSubmit={handleSubmit}>
         <h2>Phonebook</h2>
-        <FormField
-          className={styles.input}
-          value={name}
-          handleChange={handleChange}
-          {...fields.name}
-        />
+        <FormField value={name} handleChange={handleChange} {...fields.name} />
 
         <FormField
-          className={styles.input}
           value={number}
           handleChange={handleChange}
           {...fields.number}
@@ -46,7 +40,7 @@ const PhonebookForm = ({ onSubmit }) => {
           Add contact
         </button>
       </form>
-    </>
+    </div>
   );
 };
 

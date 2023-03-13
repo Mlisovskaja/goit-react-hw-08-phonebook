@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
-import styles from './filter.module.css';
+import FormField from 'components/shared/FormFields/FormField';
 
 const ContactsFilter = ({ handleChange }) => {
   return (
     <div>
-      <label className={styles.label}>Find contacts by name</label>
-      <input className={styles.input} name="filter" onChange={handleChange} />
+      <h2>Find contact by name</h2>
+      <FormField name="filter" handleChange={handleChange} />
     </div>
   );
 };
