@@ -65,8 +65,10 @@ name: 'auth',
       store.error = null;
     })
     .addCase(current.fulfilled, (store, { payload }) => {
+      const { name, email } = payload;
       store.loading = false;
-      store.user = payload;
+      store.user.name = name;
+      store.user.email = email;
       store.isLogin = true;
     })
      .addCase(current.rejected, (store, { payload }) => {
